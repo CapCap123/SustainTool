@@ -6,7 +6,7 @@ const admin = require('firebase-admin');
 //let buff = Buffer(JSON.stringify(data), 'base64');
 //let text = buff.toString('ascii');
 //console.log(text);
-let serviceAccount = require ("/Users/Capucine/Desktop/Platform/Code/Firebase/servicekey.json");
+let serviceAccount = require ("/Users/Capucine/Desktop/Platform/Code/Firebase/servicekey2.json");
 
 // We supress these logs when not in NODE_ENV=debug for cleaner Mocha output
 let console = {log: debug};
@@ -31,7 +31,6 @@ function saveBusiness (business) {
     yahoo_employees: business.employees,
     yahoo_sector: business.sector,
     yahoo_industry: business.industry,
-    new_business: 'yes',
   }).then(ref => {
     console.log('Added business with ID: ', ref.id);
   });
@@ -72,15 +71,3 @@ function saveBusiness (business) {
   }
 
   module.exports = { saveBrand, saveBusiness };
-
-//const settings = {timestampsInSnapshots: true};
-//db.settings(settings);
-
-
-    /*let docRef = firestore.collection('brands').doc('Paris');
-    let setAda = docRef.set({
-      first: 'Ada',
-      last: 'Lovelace',
-      born: 1815
-    });
-    */
