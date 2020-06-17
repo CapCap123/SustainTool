@@ -1,8 +1,4 @@
 $( document ).ready(function() {
-  document.getElementById("loadButton").style.display = "none";
-  document.getElementById("allBusinesses").style.display = "none";
-  var number = 0;
-
     // SUBMIT FORM
       $("#businessForm").submit(function(event) {
       // Prevent the form from submitting via the browser.
@@ -29,9 +25,6 @@ $( document ).ready(function() {
 
         success : function(results) {
           document.getElementById("postResultDiv").style.display = "inline"
-          document.getElementById("loadButton").style.display = "none"
-          document.getElementById("getResultDiv").style.display = "none"
-          document.getElementById("getResultsDiv").style.display = "none"
           console.log(results)
           if(results.hasBusiness_ref == false) {
             $("#postResultDiv").html("<p>" + 
